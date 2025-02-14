@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="collaborateur" class="org.iut.montreuil.entities.Collaborateur">
+        <property name="nom" value="RICORDEAU"/>
+        <property name="prenom" value="Anne"/>
+    </bean>
+
+    <bean id="collaborateur2" class="org.iut.montreuil.entities.Collaborateur">
+        <property name="nom" value="BONNOT"/>
+        <property name="prenom" value="Philippe"/>
+    </bean>
+
+    <bean id="periode" class="org.iut.montreuil.entities.Periode">
+        <property name="dateDebut" value="2001-11-11"/>
+        <property name="nbJours" value="1"/>
+    </bean>
+
+    <bean id="demandeConge" class="org.iut.montreuil.entities.DemandeConge" autowire="byName"/>
+</beans>
