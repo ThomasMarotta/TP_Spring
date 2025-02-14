@@ -1,5 +1,8 @@
 package org.iut.montreuil.entities;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Collaborateur {
     private String nom;
     private String prenom;

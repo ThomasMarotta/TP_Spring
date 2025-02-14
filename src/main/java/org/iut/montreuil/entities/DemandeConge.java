@@ -1,7 +1,16 @@
 package org.iut.montreuil.entities;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class DemandeConge {
+    @Autowired
+    @Qualifier("collaborateur")
     private Collaborateur collaborateur;
+    @Autowired
+    @Qualifier("periode")
     private Periode periode;
 
     public Collaborateur getCollaborateur() {

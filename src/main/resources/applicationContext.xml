@@ -5,6 +5,8 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+
     <bean id="collaborateur" class="org.iut.montreuil.entities.Collaborateur">
         <property name="nom" value="RICORDEAU"/>
         <property name="prenom" value="Anne"/>
@@ -20,5 +22,5 @@
         <property name="nbJours" value="1"/>
     </bean>
 
-    <bean id="demandeConge" class="org.iut.montreuil.entities.DemandeConge" autowire="byName"/>
+    <bean id="demandeConge" class="org.iut.montreuil.entities.DemandeConge"/>
 </beans>

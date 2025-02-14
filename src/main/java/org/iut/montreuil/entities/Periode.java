@@ -1,5 +1,8 @@
 package org.iut.montreuil.entities;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Periode {
     private String dateDebut;
     private int nbJours;
