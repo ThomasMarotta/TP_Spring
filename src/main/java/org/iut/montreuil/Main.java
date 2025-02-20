@@ -10,6 +10,11 @@ public class Main {
 
         DemandeConge demandeConge = (DemandeConge) context.getBean("demandeConge");
 
+        demandeConge.getCollaborateur().setNom("Ricordeau");
+        demandeConge.getCollaborateur().setPrenom("Anne");
+        demandeConge.getPeriode().setDateDebut("11/01/2001");
+        demandeConge.getPeriode().setNbJours(2);
+
         System.out.println(demandeConge.getCollaborateur().toString());
         System.out.println(demandeConge.getPeriode().toString());
     }

@@ -7,10 +7,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class DemandeConge {
     @Autowired
-    @Qualifier("collaborateur")
     private Collaborateur collaborateur;
     @Autowired
-    @Qualifier("periode")
     private Periode periode;
 
     public Collaborateur getCollaborateur() {
