@@ -1,21 +1,25 @@
 package org.iut.montreuil;
 
-import org.iut.montreuil.entities.DemandeConge;
-import org.springframework.context.ApplicationContext;
+import org.iut.montreuil.entities.Collaborateur;
+import org.iut.montreuil.templates.CollaborateurDaoImpl;
+import org.iut.montreuil.templates.CollaborateurDaoTemplate;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
+
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        DemandeConge demandeConge = (DemandeConge) context.getBean("demandeConge");
+        CollaborateurDaoTemplate collaborateurDao = context.getBean("collaboDAO", CollaborateurDaoTemplate.class);
 
-        demandeConge.getCollaborateur().setNom("Ricordeau");
-        demandeConge.getCollaborateur().setPrenom("Anne");
-        demandeConge.getPeriode().setDateDebut("11/01/2001");
-        demandeConge.getPeriode().setNbJours(2);
+        Collaborateur collaborateur = new Collaborateur();
+        collaborateur.setNom("BONNOT");
+        collaborateur.setPrenom("Philippe");
 
-        System.out.println(demandeConge.getCollaborateur().toString());
-        System.out.println(demandeConge.getPeriode().toString());
+        collaborateurDao.save(collaborateur);
+
+        System.out.println("Collaborateur ajouté : " + collaborateur);
+
+        context.close();
     }
 }

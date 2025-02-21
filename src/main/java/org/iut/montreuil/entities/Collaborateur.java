@@ -1,12 +1,23 @@
 package org.iut.montreuil.entities;
 
-import org.springframework.stereotype.Component;
+import jakarta.persistence.*;
 
-@Component
+@Entity
+@Table(name = "collaborateur")
 public class Collaborateur {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String nom;
     private String prenom;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getNom() {
         return nom;
     }
